@@ -1,0 +1,30 @@
+Het zijn weer de feestdagen, en elke winkel waar je komt geeft 
+een extraatje bij elke aankoop. Traditiegetrouw is dit vaak een 1/5 Statielot. 
+Helaas heeft de inflatie overal toegeslagen; zo ook bij de Statieloterij.
+
+Waar je voorheen nog een 1/5 statielot had waar je 1/5 van de prijs kon winnen,
+is dat tegenwoordig nog maar een 1/50 statielot. De prijs is ook maar 1/50.
+Tsja.
+Lekker goedkoop en laagdrempelig allemaal, en geweldige promotie voor de 
+Statieloterij, want daardoor kan de jackpot weer wat omhoog!
+
+Probleem is nu alleen dat je een bak aan Statieloten hebt door al je 
+kerstaankopen van de laatste tijd, en niemand heeft tijd om al die 
+getallen handmatig te checken, toch?
+
+Gelukkig hoeven jullie dat ook niet handmatig te doen; jullie kunnen programmeren!
+
+================= WAT TE DOEN ===================
+
+In LotteryNumbers.java staan de winnende getallen (winningNumbers) 
+en jouw getallen (tickets) in 2D int arrays.
+
+Schrijf code om jouw getallen, lot voor lot, te checken tegen de winnende getallen.
+
+Er zijn vijf sets aan winnende getallen, en bij elke set neemt de jackpot toe met x100.
+De eerste set winnende getallen heeft een jackpot van 10 euro. De tweede 1000 euro. Enzovoort.
+Bij 5 correcte getallen, krijg je de jackpot. Bij 4 getallen 80%. Bij 3 60%. Enzovoort.
+
+Bereken hoeveel geld je totaal wint met al je loten.
+
+Doe deze opdracht met maximaal twee personen om het leuk te houden.
