@@ -20,7 +20,8 @@ public class App {
         // double: 2.1713095708E8
     }
 
-    // Returnt int tussen 0 en 5 om te bepalen welk deel van de jackpot je krijgt
+    // Returnt int tussen 0 en 5 (eigenlijk win.length) 
+    // om te bepalen welk deel van de jackpot je krijgt
     public static int checkLot(int[] win, int[] lot) {
         int count = 0;
         for(int i = 0; i < win.length; i++) {
