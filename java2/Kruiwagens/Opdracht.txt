@@ -33,3 +33,12 @@ je wilt een fabriek voor kruiwagens en bakfietsen openen!
 
 
 <insert O.O.P. exercise here>
+// input consists of a bunch (hundreds? >:^) of orders for different vehicles
+// all kinds of modifiers can exist, e.g. (non-)motorized, capacity, passenger count, etc.
+// they all have certain fields in common, like part number, etc.
+// some combination of super-/subclass fields is used to calculate a simple "checksum"
+// that can fall within a "valid/!valid" range of some kind 
+// the factory is churning out these vehicles to fill the orders
+// however, if the checksum of a produced vehicle is !valid, it is tossed into a fire pit
+// and has to be recreated, until the checksum is valid.
+// rinse and repeat until all orders are filled. 
