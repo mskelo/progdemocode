@@ -65,4 +65,5 @@ Voor iedere "conditiepunt" minder, gaat er telkens 10% van de uiteindelijke prij
 // ???
 
 // Stap 4:
-// Bereken je uiteindelijke winst na het vullen van alle Orders
+// profit
+// Met andere woorden: Bereken je uiteindelijke winst na het vullen van alle Orders
