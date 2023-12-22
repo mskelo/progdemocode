@@ -25,7 +25,6 @@ class Vehicle {
     private int condition;
     private int price;
 
-    // Constructor for Vehicle class
     public Vehicle() {
         Random random = new Random(-229985452); // Dit staat al voor je ingevuld
         // Genereer ^ hiermee ^ de conditie van het voertuig en sla op in this.condition
