@@ -31,14 +31,28 @@ Je hebt een ondernemende geest en ziet kansen:
 je wilt een fabriek voor kruiwagens en bakfietsen openen!
 
 
-
 <insert O.O.P. exercise here>
 // input consists of a bunch (hundreds? >:^) of orders for different vehicles
 // all kinds of modifiers can exist, e.g. (non-)motorized, capacity, passenger count, etc.
-// they all have certain fields in common, like part number, etc.
-// some combination of super-/subclass fields is used to calculate a simple "checksum"
-// that can fall within a "valid/!valid" range of some kind 
-// the factory is churning out these vehicles to fill the orders
-// however, if the checksum of a produced vehicle is !valid, it is tossed into a fire pit
-// and has to be recreated, until the checksum is valid.
-// rinse and repeat until all orders are filled. 
+// they all have certain fields in common, like part number, condition and price.
+// the factory is churning out these vehicles to fill the orders one at a time,
+// the factory returns a Vehicle[] containing Vehicles in good and poor condition
+// vehicles in poor condition have to be recreated until their condition is good
+// rinse and repeat until all Orders are filled
+
+
+// Fietsen kunnen zowel gemotoriseerd als niet-gemotoriseerd zijn. Bakfietsen ook.
+// Als budgetoptie zijn er ook kruiwagens beschikbaar: deze zijn puur non-gemotoriseerd.
+// Ieder voertuig heeft een serienummer, en een "conditie". Dit is de staat waarin het 
+// voertuig van de band rolt. Er kunnen namelijk dingen fout gaan tijdens de productie,
+// en hieraan kunnen we zien of de fiets beschadigd van de band rolt.
+// int condition kan tussen 0 en 5 liggen (0 en 5 inclusief)
+
+// Stap 1:
+// Bepaal de overervingsstrictuur van de klassen door een klassendiagram te maken.
+// Hoe deel je de klassen op; wat wordt de superClass en wat de subClass?
+// En welke Fields zullen de klassen dan moeten bevatten?
+// Er zijn meerdere mogelijkheden.
+
+// Stap 2:
+// 
