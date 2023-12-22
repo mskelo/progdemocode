@@ -35,11 +35,13 @@ Als budgetoptie zijn er ook kruiwagens beschikbaar: deze zijn puur non-gemotoris
 
 Ieder voertuig heeft een serienummer, en een "conditie". Dit is de staat waarin het 
 voertuig van de band rolt. Er kunnen namelijk dingen fout gaan tijdens de productie,
-en hieraan kunnen we zien of de fiets beschadigd van de band rolt.
+en hieraan kunnen we zien of de fiets is beschadigd tijdens productie.
 
 // int condition kan tussen 0 en 5 liggen (0 en 5 inclusief). 
 // Bij < 4 is de conditie onvoldoende en moet het Vehicle opnieuw aangemaakt worden.
 // De conditie wordt (java.util.)Random bepaald bij het aanmaken van het Voertuig.
+// Om te zorgen dat iedereen hetzelfde antwoord kan krijgen, gebruik:
+//  Random random = new Random(-229985452);
 
 // Stap 1:
 // Bepaal de overervingsstructuur van de klassen door een klassendiagram te maken.
