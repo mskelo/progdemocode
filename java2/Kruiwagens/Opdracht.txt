@@ -30,6 +30,33 @@ Hierdoor is het grootste eurobiljet tegenwoordig nog maar 20 euro...
 Je hebt een ondernemende geest en ziet kansen: 
 je wilt een fabriek voor kruiwagens en bakfietsen openen!
 
+Fietsen kunnen zowel gemotoriseerd als niet-gemotoriseerd zijn. Bakfietsen ook.
+Als budgetoptie zijn er ook kruiwagens beschikbaar: deze zijn puur non-gemotoriseerd.
+
+Ieder voertuig heeft een serienummer, en een "conditie". Dit is de staat waarin het 
+voertuig van de band rolt. Er kunnen namelijk dingen fout gaan tijdens de productie,
+en hieraan kunnen we zien of de fiets beschadigd van de band rolt.
+
+// int condition kan tussen 0 en 5 liggen (0 en 5 inclusief). 
+// Bij < 4 is de conditie onvoldoende en moet het Vehicle opnieuw aangemaakt worden.
+// De conditie wordt (java.util.)Random bepaald bij het aanmaken van het Voertuig.
+
+// Stap 1:
+// Bepaal de overervingsstructuur van de klassen door een klassendiagram te maken.
+// Hoe deel je de klassen op; wat wordt de superClass en wat de subClass?
+// En welke Fields zullen de klassen dan moeten bevatten?
+// Er zijn meerdere mogelijkheden.
+
+// Stap 2:
+// Bepaal welke eigenschappen (fields) de verschillende klassen moeten hebben, 
+// en vul daarmee de benodigde constructors en get/set methods alvast in.
+
+
+
+
+
+
+
 
 <insert O.O.P. exercise here>
 // input consists of a bunch (hundreds? >:^) of orders for different vehicles
@@ -39,20 +66,3 @@ je wilt een fabriek voor kruiwagens en bakfietsen openen!
 // the factory returns a Vehicle[] containing Vehicles in good and poor condition
 // vehicles in poor condition have to be recreated until their condition is good
 // rinse and repeat until all Orders are filled
-
-
-// Fietsen kunnen zowel gemotoriseerd als niet-gemotoriseerd zijn. Bakfietsen ook.
-// Als budgetoptie zijn er ook kruiwagens beschikbaar: deze zijn puur non-gemotoriseerd.
-// Ieder voertuig heeft een serienummer, en een "conditie". Dit is de staat waarin het 
-// voertuig van de band rolt. Er kunnen namelijk dingen fout gaan tijdens de productie,
-// en hieraan kunnen we zien of de fiets beschadigd van de band rolt.
-// int condition kan tussen 0 en 5 liggen (0 en 5 inclusief)
-
-// Stap 1:
-// Bepaal de overervingsstrictuur van de klassen door een klassendiagram te maken.
-// Hoe deel je de klassen op; wat wordt de superClass en wat de subClass?
-// En welke Fields zullen de klassen dan moeten bevatten?
-// Er zijn meerdere mogelijkheden.
-
-// Stap 2:
-// 
