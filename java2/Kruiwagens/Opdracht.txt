@@ -28,43 +28,41 @@ Hierdoor is het grootste eurobiljet tegenwoordig nog maar 20 euro...
 ***
 
 Je hebt een ondernemende geest en ziet kansen: 
-je wilt een fabriek voor kruiwagens en bakfietsen openen!
+je wilt een fabriek voor kruiwagens en (bak)fietsen openen!
 
 Fietsen kunnen zowel gemotoriseerd als niet-gemotoriseerd zijn. Bakfietsen ook.
-Als budgetoptie zijn er ook kruiwagens beschikbaar: deze zijn puur non-gemotoriseerd.
+Als budgetoptie zijn er ook kruiwagens beschikbaar: deze zijn puur niet-gemotoriseerd.
 
-Ieder voertuig heeft een serienummer, en een "conditie". Dit is de staat waarin het 
+Ieder voertuig heeft een "conditie" en een prijs. De conditie is de staat waarin het 
 voertuig van de band rolt. Er kunnen namelijk dingen fout gaan tijdens de productie,
 en hieraan kunnen we zien of de fiets is beschadigd tijdens productie.
 
-// int condition kan tussen 0 en 5 liggen (0 en 5 inclusief). 
-// Bij < 4 is de conditie onvoldoende en moet het Vehicle opnieuw aangemaakt worden.
-// De conditie wordt (java.util.)Random bepaald bij het aanmaken van het Voertuig.
-// Om te zorgen dat iedereen hetzelfde antwoord kan krijgen, gebruik:
-//  Random random = new Random(-229985452);
+De conditie (int condition) kan tussen 0 en 5 liggen (0 en 5 inclusief). 
+Bij < 3 is de conditie onvoldoende en moet het Vehicle opnieuw aangemaakt worden.
+De conditie wordt (java.util.)Random bepaald bij het aanmaken van het Voertuig.
+Om te zorgen dat iedereen hetzelfde antwoord kan krijgen, gebruik bij het bepalen van de conditie:
+Random random = new Random(-229985452); // Dit staat al voor je ingevuld
+
+De conditie van het voertuig heeft ook een effect op de prijs.
+De prijs van een kruiwagen met conditie 5 is: 40000000 euro (onthoud de hyperinflatie!)
+De prijs van een fiets met conditie 5 is:     65000000 euro. 
+De prijs van een bakfiets met conditie 5 is:  80000000 euro.
+Een gemotoriseerde versie van een voertuig is 20% duurder.
+Voor iedere "conditiepunt" minder, gaat er telkens 10% van de uiteindelijke prijs af.
 
 // Stap 1:
 // Bepaal de overervingsstructuur van de klassen door een klassendiagram te maken.
 // Hoe deel je de klassen op; wat wordt de superClass en wat de subClass?
 // En welke Fields zullen de klassen dan moeten bevatten?
 // Er zijn meerdere mogelijkheden.
+// Schrijf desnoods eerst een "klad-algoritme" in pseudocode
 
 // Stap 2:
 // Bepaal welke eigenschappen (fields) de verschillende klassen moeten hebben, 
 // en vul daarmee de benodigde constructors en get/set methods alvast in.
 
+// Stap 3:
+// ???
 
-
-
-
-
-
-
-<insert O.O.P. exercise here>
-// input consists of a bunch (hundreds? >:^) of orders for different vehicles
-// all kinds of modifiers can exist, e.g. (non-)motorized, capacity, passenger count, etc.
-// they all have certain fields in common, like part number, condition and price.
-// the factory is churning out these vehicles to fill the orders one at a time,
-// the factory returns a Vehicle[] containing Vehicles in good and poor condition
-// vehicles in poor condition have to be recreated until their condition is good
-// rinse and repeat until all Orders are filled
+// Stap 4:
+// Bereken je uiteindelijke winst na het vullen van alle Orders
