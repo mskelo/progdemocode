@@ -72,7 +72,7 @@ class LinkedList {
     // Other methods:
 
     /**
-     * void push(String value): - Pusht een gegeven String naar het einde van de lijst.
+     * void push(String value): - Loopt Node voor Node door de lijst, en zet de meegegeven waarde aan het einde van de lijst neer (in een `new Node()`).
      *                          - Anders, als de lijst leeg is, wordt de head-Node gelijkgesteld aan de meegegeven parameter.
      * 
      */
@@ -92,10 +92,14 @@ class LinkedList {
 
 
     /**
-     * String pop(String value): - Zoekt in de lijst naar een Node met value gelijk aan parameter.
-     *                           - Als het bestaat wordt de Node uit de lijst gehaald en wordt de huidige 
-     *                             Node met de daaropvolgende Node verbonden om een doorlopende lijst te behouden.
-     *                           - Als geen bestaande waarde wordt gevonden returnt het "Not found"
+     * String pop(String value): - Loop Node voor Node door de lijst heen.
+     *                           - Als je ziet dat de /VOLGENDE/ Node een value heeft die gelijk is aan de meegegeven parameter:
+     *                               - Sla de te verwijderen Node op in een tijdelijke variabele
+     *                               - Stel de /HUIDIGE/ Node z'n `next` gelijk aan de eerstvolgende Node NA de verwijderde Node
+     *                                 !!! Dit is enorm belangrijk: als je dit vergeet wordt de rest van de lijst 
+     *                                     na de huidige Node opgeruimd door de Garbage Collector
+     *                               - Return de waarde uit de verwijderde Node
+     *                           - Als er geen Node met gegeven waarde in de lijst zit, returnt de method "Not found"
      * 
      * EXTRA: Deze method bevat een bug. Kan je hem vinden?
      * 
@@ -114,10 +118,14 @@ class LinkedList {
     }
 
     /**
-     * String pop(int index): - Zoekt in de lijst naar een Node met value gelijk aan parameter.
-     *                        - Als het bestaat wordt de Node uit de lijst gehaald en wordt de huidige 
-     *                          Node met de daaropvolgende Node verbonden om een doorlopende lijst te behouden.
-     *                        - Als geen bestaande waarde wordt gevonden returnt het "Not found"
+     * String pop(int index): - Loop Node voor Node door de lijst heen.
+     *                        - Als je ziet dat de huidige index == index-1:
+     *                           - Sla de /VOLGENDE/ Node op in een tijdelijke variabele
+     *                           - Stel de /HUIDIGE/ Node z'n `next` gelijk aan de eerstvolgende Node NA de verwijderde Node
+     *                              !!! Dit is enorm belangrijk: als je dit vergeet wordt de rest van de lijst 
+     *                                  na de huidige Node opgeruimd door de Garbage Collector
+     *                           - Return de waarde uit de verwijderde Node
+     *                        - Als er geen Node met gegeven waarde in de lijst zit, returnt de method "Not found"
      * 
      */
     public String pop(int index) {
@@ -137,8 +145,8 @@ class LinkedList {
 
     /**
      * String peek(String value): - Zoekt in de lijst naar een Node met value gelijk aan parameter.
-     *                            - Als het bestaat, returnt het de betreffende Node zonder de lijst te wijzigen
-     *                            - Als geen bestaande waarde wordt gevonden returnt het "Not found"
+     *                            - Als er een bestaat, returnt de method de betreffende Node zonder de lijst te wijzigen
+     *                            - Als geen bestaande waarde wordt gevonden returnt de method "Not found"
      * 
      */
     public String peek(String value) {
