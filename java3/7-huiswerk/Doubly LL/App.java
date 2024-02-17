@@ -1,5 +1,5 @@
 /**
- * TINPRO04-3 Les 7-HW // (Circular) Doubly Linked List, non-generic
+ * TINPRO04-3 Les 7-HW // Doubly Linked List, non-generic
  * 20240217 // m.skelo@hr.nl
  * 
  */
@@ -71,9 +71,8 @@ class Node {
 }
 
 class LinkedList {
-    // Fields:  (Belangrijk: nieuwe field Node tail)
+    // Fields:
     private Node head;
-    private Node tail;
 
     // Constructors (n/a)
 
@@ -81,16 +80,10 @@ class LinkedList {
 
     // Other methods:
 
-    /**
-     * void push(String value): - Loopt Node voor Node door de lijst, en zet de meegegeven waarde aan het einde van de lijst neer (in een `new Node()`).
-     *                          - Anders, als de lijst leeg is, wordt de head-Node gelijkgesteld aan de meegegeven parameter.
-     * 
-     */
     public void push(String value) {
         Node newNode = new Node(value);
-        if (this.head == null && this.tail == null) {
+        if (this.head == null) {
             this.head = newNode;
-            this.tail = newNode;
         } 
         else {
             Node current = this.head;
@@ -99,22 +92,10 @@ class LinkedList {
             }
             current.setNext(newNode);
             current.getNext().setPrevious(current);  // Staar hier even naar.
-            this.tail = current.getNext();           // Of: this.tail = newNode
         }
 
     }
 
-    /**
-     * String pop(String value): - Loop Node voor Node door de lijst heen.
-     *                           - Als je ziet dat de /VOLGENDE/ Node een value heeft die gelijk is aan de meegegeven parameter:
-     *                               - Sla de te verwijderen Node op in een tijdelijke variabele
-     *                               - Stel de /HUIDIGE/ Node z'n `next` gelijk aan de eerstvolgende Node NA de verwijderde Node
-     *                                 !!! Dit is enorm belangrijk: als je dit vergeet wordt de rest van de lijst 
-     *                                     na de huidige Node opgeruimd door de Garbage Collector
-     *                               - Return de waarde uit de verwijderde Node
-     *                           - Als er geen Node met gegeven waarde in de lijst zit, returnt de method "Not found"
-     * 
-     */
     public String pop(String value) {
         Node current = this.head;
         while (current.getNext() != null) {
@@ -137,17 +118,6 @@ class LinkedList {
         return "Not found";
     }
 
-    /**
-     * String pop(int index): - Loop Node voor Node door de lijst heen.
-     *                        - Als je ziet dat de huidige index == index-1:
-     *                           - Sla de /VOLGENDE/ Node op in een tijdelijke variabele
-     *                           - Stel de /HUIDIGE/ Node z'n `next` gelijk aan de eerstvolgende Node NA de verwijderde Node
-     *                              !!! Dit is enorm belangrijk: als je dit vergeet wordt de rest van de lijst 
-     *                                  na de huidige Node opgeruimd door de Garbage Collector
-     *                           - Return de waarde uit de verwijderde Node
-     *                        - Als er geen Node met gegeven waarde in de lijst zit, returnt de method "Not found"
-     * 
-     */
     public String pop(int index) {
         int currentindex = 0;
         Node current = head;
@@ -172,12 +142,6 @@ class LinkedList {
         return "Not found";
     }
 
-    /**
-     * String peek(String value): - Zoekt in de lijst naar een Node met value gelijk aan parameter.
-     *                            - Als er een bestaat, returnt de method de betreffende Node zonder de lijst te wijzigen
-     *                            - Als geen bestaande waarde wordt gevonden returnt de method "Not found"
-     * 
-     */
     public String peek(String value) {
         Node current = head;
         while (current.getNext() != null) {
@@ -189,10 +153,6 @@ class LinkedList {
         return "Not found";
     }
 
-    /**
-     * void print(): Print alle waardes in de lijst achter elkaar, met een nette newline op het eind.
-     * 
-     */
     public void print() {
         Node current = head;
         while (current != null) {
