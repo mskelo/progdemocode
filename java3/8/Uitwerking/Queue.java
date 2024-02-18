@@ -22,6 +22,7 @@ public class Queue {
         if (this.tail != null) {
             Node temp = this.tail;
             this.tail = temp.getPrevious();
+            this.tail.setNext(null);
             temp.setPrevious(null);
             returnVal = temp.getValue();
             this.size--;
