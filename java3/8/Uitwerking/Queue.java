@@ -14,13 +14,11 @@ public class Queue {
             newNode.setNext(this.head);
             this.head = newNode;
         }
-        System.out.println(value.getID());
         this.size++;
     }
 
     public Container pop() {
         Container returnVal = null;
-        System.out.println(this.tail.getValue().getID());
         if (this.size == 0) {
             return null;
         }
