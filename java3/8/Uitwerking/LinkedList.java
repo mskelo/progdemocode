@@ -3,9 +3,13 @@ public class LinkedList {
     private Node tail;
     private int size;
 
-    public void push(String value) {
+    public int getSize() {
+        return this.size;
+    }
+
+    public void push(Container value) {
         Node newNode = new Node(value);
-        if (this.head == null && this.tail == null) {
+        if (this.size == 0) {
             this.head = newNode;
             this.tail = newNode;
         } 
@@ -19,13 +23,15 @@ public class LinkedList {
             this.tail = current.getNext();           // Of: this.tail = newNode
         }
 
+        this.size++;
+
         // BONUS: Maak de lijst circulair!
         // Dit kun je buiten de if/else laten, omdat je dit in beide gevallen hetzelfde zou doen
         this.tail.setNext(this.head);
         this.head.setPrevious(this.tail);
     }
 
-    public String pop(int index) {
+    public Container pop(int index) {
         int currentindex = 0;
         Node current = head;
         while (currentindex != index && !current.getNext().equals(this.head)) {
@@ -37,6 +43,8 @@ public class LinkedList {
                 current.setNext(current.getNext().getNext());
                 current.getNext().setPrevious(current);
 
+                this.size--;
+
                 // Snij de verbindingen door in het verwijderde object om het geheugen vrij te maken
                 returnNode.setPrevious(null);
                 returnNode.setNext(null);
@@ -46,10 +54,10 @@ public class LinkedList {
             currentindex++;
             current = current.getNext();
         }
-        return "Not found";
+        return null;
     }
 
-    public String peek(String value) {
+    public Container peek(Container value) {
         Node current = head;
         while (!current.getNext().equals(this.head)) {
             if (current.getNext().getValue().equals(value)) {
@@ -57,7 +65,7 @@ public class LinkedList {
             }
             current = current.getNext();
         }
-        return "Not found";
+        return null;
     }
 
     public void print() {

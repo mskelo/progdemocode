@@ -3,7 +3,7 @@ public class Queue {
     private Node tail;
     private int size = 0;
 
-    public void push(String value) {
+    public void push(Container value) {
         Node newNode = new Node(value);
         if (this.head == null && this.tail == null) {
             this.head = newNode;
@@ -14,18 +14,25 @@ public class Queue {
             newNode.setNext(this.head);
             this.head = newNode;
         }
+        System.out.println(value.getID());
         this.size++;
     }
 
-    public String pop() {
-        String returnVal = "";
-        if (this.tail != null) {
+    public Container pop() {
+        Container returnVal = null;
+        System.out.println(this.tail.getValue().getID());
+        if (this.size == 0) {
+            return null;
+        }
+        else {
             Node temp = this.tail;
-            this.tail = temp.getPrevious();
-            this.tail.setNext(null);
-            temp.setPrevious(null);
             returnVal = temp.getValue();
             this.size--;
+            if (this.size > 0) {
+                this.tail = temp.getPrevious();
+                this.tail.setNext(null);
+            }
+            temp.setPrevious(null);
         }
         return returnVal;
     }

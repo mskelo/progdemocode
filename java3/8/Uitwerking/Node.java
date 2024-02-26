@@ -2,10 +2,10 @@ public class Node {
     // Fields:
     private Node previous;
     private Node next;
-    private String value;
+    private Container value;
      
     // Constructor(s):
-    public Node(String value) {
+    public Node(Container value) {
         this.value = value;
     }
  
@@ -22,7 +22,7 @@ public class Node {
     public void setPrevious(Node previous) {
         this.previous = previous;
     }
-    public String getValue() {
+    public Container getValue() {
         return this.value;
     }
 }

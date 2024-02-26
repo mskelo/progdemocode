@@ -2,7 +2,7 @@ public class Stack {
     private Node top;
     private int size = 0;
 
-    public void push(String value) {
+    public void push(Container value) {
         if (this.top == null) {
             this.top = new Node(value);
         } 
@@ -14,8 +14,8 @@ public class Stack {
         this.size++;
     }
 
-    public String pop() {
-        String returnVal = "";
+    public Container pop() {
+        Container returnVal = null;
         if (this.top != null) {
             Node temp = this.top;
             this.top = temp.getNext();
