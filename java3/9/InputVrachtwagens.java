@@ -1,3 +1,10 @@
+/**
+ * TINPRO04-3 Les 9 // Map, non-generic
+ * 20240302 // m.skelo@hr.nl
+ * SPO 5: Douanecontrole
+ * 
+ */
+
 public final class InputVrachtwagens { // final voorkomt overerving van deze class
     private InputVrachtwagens() {}     // private constructor voorkomt instantiering van deze class
                                        

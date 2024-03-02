@@ -1,3 +1,10 @@
+/**
+ * TINPRO04-3 Les 9 // Map, non-generic
+ * 20240302 // m.skelo@hr.nl
+ * SPO 5: Douanecontrole
+ * 
+ */
+
 public class Container {
     private int id;
     private String inhoud;

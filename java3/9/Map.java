@@ -1,3 +1,10 @@
+/**
+ * TINPRO04-3 Les 9 // Map, non-generic
+ * 20240302 // m.skelo@hr.nl
+ * SPO 5: Douanecontrole
+ * 
+ */
+
 class Map {
     private Vrachtwagen head;
     private int size;
