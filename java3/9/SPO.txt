@@ -71,7 +71,7 @@ Er hebben zich 30 Vrachtwagens aangemeld bij het havenbedrijf. Ze hoeven door al
 direct in de rij te gaan staan. Nu staan ze allemaal op parkeerplaats InputVrachtwagens.java te wachten totdat ze 1 voor 1
 door de douane worden opgeroepen om in te checken op de kade.
 
-Ga naar je main(); Vul de kade met Vrachtwagens, en vul daarna weer schepen met Containers (5 per schip).
+Ga naar je main() en vul de kade met Vrachtwagens.
 
 Controleer of de Map correct geprogrammerd is, door alle Containers van onderschepte Vrachtwagens 
 open te maken, en de inhoud en het container-ID op het scherm te printen zoals: "Container ID: 0, Inhoud: Bagel."
