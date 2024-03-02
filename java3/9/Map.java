@@ -15,7 +15,7 @@ class Map {
             Vrachtwagen current = head;
             while (current.getNext() != null) {
                 if (current.getKenteken().equals(value.getKenteken())) {
-                    System.out.println("Kenteken already exists! Aborting push!");
+                    System.out.println("Container ID: "+ value.getContainer().getID() +", Inhoud: "+ value.getContainer().getInhoud());
                     return;
                 }
                 current = current.getNext();

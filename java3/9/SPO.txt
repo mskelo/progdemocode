@@ -1,5 +1,11 @@
-Les 9 / SPO 5: Smokkelpreventie
-20240302 // Matej Skelo (m.skelo@hr.nl)
+/**
+ * TINPRO04-3 Les 9 // Map, non-generic
+ * 20240302 // m.skelo@hr.nl
+ * SPO 5: Douanecontrole
+ * 
+ */
+
+
 
 Stap 1: Probleem
 -=-=-=-=-=-=-=-=-=-=-
@@ -15,6 +21,8 @@ Bedenk zelf welke methodes hier allemaal bij horen.
 
 De douane is erachter gekomen dat illegale handel nu ineens gemakkelijk te herkennen is: 
 smokkelvrachtwagens hebben precies hetzelfde kenteken als echte Vrachtwagens!
+
+
 
 Stap 2: Ontwerp
 -=-=-=-=-=-=-=-=-
@@ -50,6 +58,7 @@ Vul je bestaande klassendiagram aan met al deze informatie en laat dit door een 
 Ga pas verder met het schrijven van de code als jullie het met elkaar eens zijn over het klassendiagram.
 
 
+
 Stap 3: Schrijf code
 -=-=-=-=-=-=-=-=-=-=-
 
@@ -65,5 +74,21 @@ door de douane worden opgeroepen om in te checken op de kade.
 Ga naar je main(); Vul de kade met Vrachtwagens, en vul daarna weer schepen met Containers (5 per schip).
 
 Controleer of de Map correct geprogrammerd is, door alle Containers van onderschepte Vrachtwagens 
-open te maken, en de inhoud en het container-ID op het scherm te printen. 
-Controleer handmatig of je output klopt.
+open te maken, en de inhoud en het container-ID op het scherm te printen zoals: "Container ID: 0, Inhoud: Bagel."
+Bedenk goed waar je dit het beste kunt schrijven.
+
+-> Controleer handmatig of je output klopt.
+
+Print uiteindelijk van ieder gevuld schip de inhoud en het ID van alle Containers, op volgorde, met een witregel ertussen.
+Bijvoorbeeld:
+Container ID: 1, Inhoud: Toiletpapier
+Container ID: 2, Inhoud: Knuffels
+Container ID: 3, Inhoud: Koelkasten
+Container ID: 4, Inhoud: Meel
+Container ID: 5, Inhoud: Een koekje
+
+Container ID: 6, Inhoud: Tegels
+...
+...
+
+-> Ga weer handmatig na of deze volgorde klopt, door te kijken naar de eigenschappen van de datastructuren die je hebt gebruikt in je code.
