@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-02T21:58:49.461Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="QU4K8JzxbrXCwJJuSgec" version="24.0.1" type="device">
+<mxfile host="app.diagrams.net" modified="2024-03-02T22:07:04.606Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="NAPJsh3K21iGt6W0llBj" version="24.0.1" type="device">
   <diagram name="Page-1" id="PR6fOSyUJeauLr7hAAhh">
     <mxGraphModel dx="1669" dy="2270" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -550,7 +550,7 @@
           <mxGeometry y="112" width="181" height="26" as="geometry" />
         </mxCell>
         <mxCell id="jDrMUYj8cxWC8FAjD2sR-305" value="Map" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontFamily=Courier New;" parent="1" vertex="1">
-          <mxGeometry x="399" y="-819.5" width="300" height="216" as="geometry">
+          <mxGeometry x="399" y="-819.5" width="300" height="191.5" as="geometry">
             <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -574,9 +574,6 @@
         </mxCell>
         <mxCell id="fiQQ0TbFqjq0Zx_W-gDM-1" value="+ get(kenteken: String): Vrachtwagen" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Courier New;" parent="jDrMUYj8cxWC8FAjD2sR-305" vertex="1">
           <mxGeometry y="164" width="300" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="jDrMUYj8cxWC8FAjD2sR-314" value="+ print(): void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Courier New;" parent="jDrMUYj8cxWC8FAjD2sR-305" vertex="1">
-          <mxGeometry y="190" width="300" height="26" as="geometry" />
         </mxCell>
         <mxCell id="jDrMUYj8cxWC8FAjD2sR-315" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;" parent="1" source="jDrMUYj8cxWC8FAjD2sR-316" target="jDrMUYj8cxWC8FAjD2sR-320" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -610,7 +607,7 @@
           <mxGeometry y="60" width="236" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Dfv19ji4cgC-cOCcALZC-1" value="Vrachtwagen" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontFamily=Courier New;" parent="1" vertex="1">
-          <mxGeometry x="400" y="-576.5" width="298" height="242" as="geometry">
+          <mxGeometry x="400" y="-607" width="298" height="242" as="geometry">
             <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
