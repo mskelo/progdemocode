@@ -15,7 +15,8 @@ class Map {
             Vrachtwagen current = head;
             while (current.getNext() != null) {
                 if (current.getKenteken().equals(value.getKenteken())) {
-                    System.out.println("Container ID: "+ value.getContainer().getID() +", Inhoud: "+ value.getContainer().getInhoud());
+                    // Onderschepte Container:
+                    System.out.println("HALT! Douane!\nContainer ID: "+ value.getContainer().getID() +", Inhoud: "+ value.getContainer().getInhoud());
                     return;
                 }
                 current = current.getNext();
@@ -28,7 +29,7 @@ class Map {
     public Vrachtwagen remove(String kenteken) {
         Vrachtwagen current = head;
         while (current.getNext() != null) {
-            if (current.getNext().getKenteken().equals(value.getKenteken())) {
+            if (current.getNext().getKenteken().equals(kenteken)) {
                 Vrachtwagen returnVal = current.getNext();
                 current.setNext(current.getNext().getNext());
                 returnVal.setNext(null);
@@ -41,22 +42,14 @@ class Map {
     }
 
     public Vrachtwagen get(String kenteken) {
-        Node current = head;
+        Vrachtwagen current = head;
         while (current.getNext() != null) {
-            if (current.getNext().getValue().equals(value.getKenteken())) {
-                return current.getNext().getValue();
+            if (current.getNext().getKenteken().equals(kenteken)) {
+                return current.getNext();
             }
             current = current.getNext();
         }
         return null;
     }
 
-    public void print() {
-        Vrachtwagen current = head;
-        while (current != null) {
-            System.out.print(current.getValue()+" ");
-            current = current.getNext();
-        }
-        System.out.println();
-    }
 }

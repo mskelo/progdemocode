@@ -13,6 +13,11 @@ public class App {
     private static final int MAX_STACK_SIZE = 5;
     public static void main(String[] args) {
         Map kade = new Map();
+        for (Vrachtwagen v : InputVrachtwagens.aangemelde_vrachtwagens) {
+            kade.put(v);
+        }
+
+
         
     }
 }
