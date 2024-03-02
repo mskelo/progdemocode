@@ -1,0 +1,69 @@
+Les 9 / SPO 5: Smokkelpreventie
+20240302 // Matej Skelo (m.skelo@hr.nl)
+
+Stap 1: Probleem
+-=-=-=-=-=-=-=-=-=-=-
+De haven draait op volle toeren, alleen is er 1 probleem: door het gebrek aan controle is onze haven een ideale smokkelroute geworden!
+De overheid heeft verbetering beloofd, en die is er zowaar gekomen: er is nu permanente contole door de douane op onze haven.
+Waar we vroeger niet al te nauw keken naar de vrachtwagens die onze Containers vervoerden (en we deden alsof ze zelf pootjes hadden), 
+bleek dat criminelen die kwetsbaarheid hebben misbruikt, en kloons van echte vrachtwagens hebben gemaakt!
+
+Vanaf nu worden Vrachtwagens allemaal geregistreerd bij het havenbedrijf. Van iedere Vrachtwagen wordt een kenteken (String)
+bijgehouden, en uiteraard de lading (Container). Iedere Vrachtwagen bevat ook een referentie naar de volgende Vrachtwagen in de rij. 
+Ook wordt van iedere Container nu de inhoud (String) geregistreerd bij de douane, naast het ID (int).
+Bedenk zelf welke methodes hier allemaal bij horen.
+
+De douane is erachter gekomen dat illegale handel nu ineens gemakkelijk te herkennen is: 
+smokkelvrachtwagens hebben precies hetzelfde kenteken als echte Vrachtwagens!
+
+Stap 2: Ontwerp
+-=-=-=-=-=-=-=-=-
+
+Elke Vrachtwagen op de kade moet uniek zijn. 
+
+Door deze aanpassing is de Queue niet meer geschikt als datastructuur voor de kade.
+We hebben nog geen datastructuur die kan controleren of een "Node" (of: Vrachtwagen) uniek is; 
+we zullen weer iets nieuws moeten schrijven om met deze situatie om te gaan.
+
+Hiervoor pakken we de code van de Singly Linked List uit Les 7 erbij als basis voor onze nieuwe datastructuur.
+Maak vervolgens de volgende aanpassingen:
+
+- Vervang elke referentie naar Node met: Vrachtwagen
+
+- Pas de functionaliteit van push() zo aan, dat een nieuwe Vrachtwagen NIET aan de lijst toegevoegd wordt 
+  als een Vrachtwagen met hetzelfde kenteken al in de lijst bestaat. 
+
+- Pas de functionaliteit van pop() zo aan, dat Vrachtwagens alleen op basis van kenteken verwijderd kunnen worden.
+  Als er geen Vrachtwagen met gegeven kenteken wordt gevonden: return null;
+
+- Pas de functionaliteit van peek() zo aan, dat Vrachtwagens alleen op basis van kenteken opgezocht kunnen worden.
+  Als er geen Vrachtwagen met gegeven kenteken wordt gevonden: return null;
+
+- Verander de namen van de methods: push() --(wordt)--> put()
+                                    pop()  --(wordt)--> remove()
+                                    peek() --(wordt)--> get()
+
+- Verander ten slotte de naam van de class van LinkedList naar: Map
+
+
+Vul je bestaande klassendiagram aan met al deze informatie en laat dit door een medestudent controleren.
+Ga pas verder met het schrijven van de code als jullie het met elkaar eens zijn over het klassendiagram.
+
+
+Stap 3: Schrijf code
+-=-=-=-=-=-=-=-=-=-=-
+
+Kijk welke bestaande classes je kunt hergebruiken, welke je moet aanpassen, en welke nieuw geschreven moeten worden.
+Vertaal het klassendiagram naar code.
+
+~~~~~
+
+Er hebben zich 30 Vrachtwagens aangemeld bij het havenbedrijf. Ze hoeven door alle nieuwe veranderingen niet langer
+direct in de rij te gaan staan. Nu staan ze allemaal op parkeerplaats InputVrachtwagens.java te wachten totdat ze 1 voor 1
+door de douane worden opgeroepen om in te checken op de kade.
+
+Ga naar je main(); Vul de kade met Vrachtwagens, en vul daarna weer schepen met Containers (5 per schip).
+
+Controleer of de Map correct geprogrammerd is, door alle Containers van onderschepte Vrachtwagens 
+open te maken, en de inhoud en het container-ID op het scherm te printen. 
+Controleer handmatig of je output klopt.
