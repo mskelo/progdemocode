@@ -91,4 +91,5 @@ Container ID: 6, Inhoud: Tegels
 ...
 ...
 
--> Ga weer handmatig na of deze volgorde klopt, door te kijken naar de eigenschappen van de datastructuren die je hebt gebruikt in je code.
+-> Ga weer handmatig na of deze volgorde logisch is, 
+   door te kijken naar de eigenschappen van de datastructuren die je hebt gebruikt in je code.
