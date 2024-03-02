@@ -2,7 +2,7 @@ public final class InputVrachtwagens { // final voorkomt overerving van deze cla
     private InputVrachtwagens() {}     // private constructor voorkomt instantiering van deze class
                                        
     public static final Vrachtwagen[] aangemelde_vrachtwagens = {
-        new Vrachtwagen("J-708-WW", new Container(0, "Sinaasappels")),
+        new Vrachtwagen("J-708-WW", new Container(0, "Bananen")),
         new Vrachtwagen("K-405-PL", new Container(1, "Arduino's")),
         new Vrachtwagen("A-744-RT", new Container(2, "Blauw zout")),
         new Vrachtwagen("J-709-WW", new Container(3, "Tapijten")),

@@ -12,8 +12,8 @@ import java.nio.file.Paths;
 public class App {
     private static final int MAX_SIZE = 5;
     public static void main(String[] args) {
-        Queue kade = new Queue();
-        Stack schip = new Stack();
+        Map kade = new Map();
+        
 
         // Push 5 nieuwe Containers op de kade
         // Geef iedere Container een oplopend ID, dus: 1, 2, 3, 4....
