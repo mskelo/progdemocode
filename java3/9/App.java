@@ -18,7 +18,5 @@ public class App {
             kade.put(v);
         }
 
-
-        
     }
 }
