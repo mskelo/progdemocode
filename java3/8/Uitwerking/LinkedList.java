@@ -1,3 +1,10 @@
+/**
+ * TINPRO04-3 Les 8 // Stack and Queue, non-generic
+ * 20240217 // m.skelo@hr.nl
+ * SPO 5: Containerterminal
+ * 
+ */
+
 public class LinkedList {
     private Node head;
     private Node tail;
