@@ -17,7 +17,7 @@ class Map<K,V>{
      * Om in main() te kunnen checken welke Containers er onderschept zijn
      * 
      */
-    public boolean put(Entry<K,V> entry) {
+    public boolean put(Entry entry) {
         Entry<K,V> newNode = entry;
         if (head == null) {    // Of: this.size == 0
             head = newNode;
