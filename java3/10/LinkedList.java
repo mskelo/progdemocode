@@ -5,8 +5,8 @@
  */
 
 public class LinkedList<T> {
-    private Node<T> head;
-    private Node<T> tail;
+    private Node head;
+    private Node tail;
     private int size;
 
     public int getSize() {
@@ -14,13 +14,13 @@ public class LinkedList<T> {
     }
 
     public void push(T value) {
-        Node<T> newNode = new Node(value);
+        Node newNode = new Node(value);
         if (this.size == 0) {
             this.head = newNode;
             this.tail = newNode;
         } 
         else {
-            Node<T> current = this.head;
+            Node current = this.head;
             while (!current.getNext().equals(this.head)) {
                 current = current.getNext();
             }

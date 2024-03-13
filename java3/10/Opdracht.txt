@@ -1,0 +1,62 @@
+/**
+ * TINPRO04-3 Les 10 // Alle datastructuren, generic
+ * 20240304 // m.skelo@hr.nl
+ * 
+ */
+
+Als je aan de opdrachten tot nu toe hebt gewerkt, heb je misschien al gemerkt dat 
+tussen de verschillende opdrachten vaak alleen maar het datatype van de opgeslagen value verandert.
+
+In het echt hoef je niet steeds je code aan te passen als je er iets anders wilt opslaan.
+Het liefst zou je je datastructuur zo _generiek_ mogelijk willen schrijven, zodat je er _ieder_ datatype in kan stoppen
+
+In Java kan je datatype-placeholders gebruiken. Hiermee verander je een specifiek datatype naar een letter.
+
+Meestal kiezen we de letter 'T', voor 'type'. We nemen de class Container als voorbeeld:
+
+Voorheen kon de inhoud alleen maar uit String bestaan; maar misschien willen we er allerlei soorten objecten in stoppen, 
+zoals bijvoorbeeld Integer. Met gebruik van Generics hoef je niet je code te herschrijven voor ieder datatype.
+
+```
+public class Container {
+    private int id;
+    private String inhoud;
+    public Container(int id, String inhoud) {
+        this.id = id;
+        this.inhoud = inhoud;
+    }
+    public int getID() {
+        return this.id;
+    }
+    public String getInhoud() {
+        return this.inhoud;
+    }
+}
+```
+
+De generieke versie zou er zo uitzien:
+```
+public class Container<T> {
+    private int id;
+    private T inhoud;
+    public Container(int id, T inhoud) {
+        this.id = id;
+        this.inhoud = inhoud;
+    }
+    public int getID() {
+        return this.id;
+    }
+    public T getInhoud() {
+        return this.inhoud;
+    }
+}
+```
+
+
+=============
+Opdracht:
+=============
+
+Herschrijf de code de datastructuren van SPO 5 naar Generics. 
+Gebruik weer hetzelfde inputbestand: InputVrachtwagens.java
+Als je dit correct hebt gedaan, zou je weer precies dezelfde output moeten krijgen.

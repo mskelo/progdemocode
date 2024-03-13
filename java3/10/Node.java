@@ -6,8 +6,8 @@
 
  public class Node<T> {
     // Fields:
-    private Node previous;
-    private Node next;
+    private Node<T> previous;
+    private Node<T> next;
     private T value;
      
     // Constructor(s):
