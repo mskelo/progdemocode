@@ -1,7 +1,7 @@
 /**
  * TINPRO04-3 Les 10 // Alle datastructuren, generic
  * 20240304 // m.skelo@hr.nl
- * 
+ * SPO 5.2
  */
 
 Als je aan de opdrachten tot nu toe hebt gewerkt, heb je misschien al gemerkt dat 
