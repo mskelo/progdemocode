@@ -25,6 +25,7 @@ class Foo extends Thread {
     @Override
     public void run() {
         // De try/catch MOET hierin staan, want de overridden run() method bevat geen `throws InterruptedException`
+        // Anders kan de try/catch ook in loop(), maar dan zonder `throws`
         try {
             loop();
         } 
