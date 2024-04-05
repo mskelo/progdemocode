@@ -21,7 +21,7 @@
  * Runnable is een interface. Wat /moet/ je allemaal implementeren uit die interface?
  */
 
- class Foo {
+class Foo {
     public void loop() {
         for(int i = 0; i<5; i++) {
             System.out.println(i);
