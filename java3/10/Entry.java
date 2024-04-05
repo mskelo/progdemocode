@@ -7,7 +7,7 @@
 public class Entry<K,V> {
     private K key;
     private V value;
-    private Entry next;
+    private Entry<K,V> next;
 
     public Entry(K key, V value) {
         this.key = key;
