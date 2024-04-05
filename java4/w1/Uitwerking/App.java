@@ -33,6 +33,7 @@ class Foo extends Thread {
         }
     }
 
+    // Stap 1
     public void loop() throws InterruptedException {
         for(int i = 0; i<5; i++) {
             System.out.println(i);
@@ -46,17 +47,21 @@ public class App {
         Thread t1 = new Foo();
         Thread t2 = new Foo();
 
+        // Stap 2
         t1.start();
         t2.start();
-        
-        try {
-            t1.join();
-            t2.join();
-        }
-        catch(InterruptedException e) {
-            e.printStackTrace();
-        }
 
         System.out.println("Einde programma.");
+
+        // Stap 3
+        final int MAX_THREADS = 10000;
+        Thread threads[] = new Foo[MAX_THREADS];
+        for(int i=0; i < MAX_THREADS; i++) {
+            threads[i] = new Foo();
+        }
+        for (Thread t : threads) {
+            t.start();
+        }
+
     }
 }
