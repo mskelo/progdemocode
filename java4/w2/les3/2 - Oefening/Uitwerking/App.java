@@ -64,6 +64,8 @@ public class App {
         // }
 
         /**
+         * Het toevoegen van parallelle Threads maakt dit merkbaar sneller (zeker als je met de getallen klooit) ((zelfs als je join() weghaalt))
+         * 
          * Het rare gedrag was dat het programma maar bleef doortellen,
          * want zolang Counter.counter != MAX_COUNT, worden steeds nieuwe Threads opgestart,
          * maar misschien zou een lopende Thread al MAX_COUNT bereiken!
