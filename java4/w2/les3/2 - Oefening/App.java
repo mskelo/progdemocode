@@ -1,5 +1,5 @@
  /**
- * TINPRO04-4 Les 3 // Expertvoorbeeld: Thread Race
+ * TINPRO04-4 Les 3 // Lesoefening: Thread Race toernooi
  * 20240415 // m.skelo@hr.nl
  * Demonstreert werking van join(), interrupt(), en sleep()
  */
@@ -49,7 +49,7 @@ public class App {
 }
 
 class Contestant extends Thread {
-    private Random rand = new Random();
+    Random r = new Random();
     private String threadName;
     
     public Contestant(String threadName) {
@@ -62,7 +62,7 @@ class Contestant extends Thread {
                 System.out.println(this.threadName + ": " + i);
 
                 // Als je de 4500 en 500 hier omdraait, zie je goed de werking van this.interrupt()
-                int rendum = rand.nextInt(4500) + 500; // min. 500, max. 5000
+                int rendum = r.nextInt(4500) + 500; // min. 500, max. 5000
 
                 if (rendum < 1000) {       // Joker, gg
                     continue;
