@@ -2,6 +2,11 @@
  * TINPRO04-4 Les 3 // Lesoefening: Parallel Counter
  * 20240415 // m.skelo@hr.nl
  * Zorg dat je met behulp van parallelle CountThreads zo snel mogelijk tot MAX_COUNT telt.
+ * 
+ * Stappenplan:
+ * 1.) Verdeel de taak in kleinere "brokken" van gelijke grootte
+ * 2.) Start net zoveel Threads als dat je "brokken" hebt
+ * 3.) Wacht totdat _alle_ Threads klaar zijn. Print _daarna_ pas de waarde van Counter.counter
  */
 
 class Counter {
@@ -12,7 +17,8 @@ class Counter {
     // Mocht je vooruit willen lopen: probeer uit te zoeken waarom het zich raar gedraagt zonder "synchronized".
     public synchronized void verhoog() { 
         Counter.counter++;
-        System.out.println("Counter value is now " + Counter.counter);    
+        System.out.println(Counter.counter);
+
     }
 }  
 
@@ -35,12 +41,15 @@ class CountThread extends Thread {
 
 public class App { 
     public static void main(String[] args) {
-        final int MAX_COUNT = 5000;
-        final int COUNT_PER_THREAD = 10;
+        final int MAX_COUNT = 5000000;
+        final int COUNT_PER_THREAD = 10000;
         Counter c = new Counter();
         /**
          * Dit is te langzaam. Dit kan sneller zonder loop, met parallelle Threads.
          * Nu start dit steeds 1 Thread achter elkaar totdat MAX_COUNT is bereikt.
+         * 
+         * Dit programma geeft nu ook raar (onverwacht) gedrag. 
+         * Probeer te ontdekken wat voor gedrag dit is, en los dit op.
          */
         while (Counter.counter < MAX_COUNT) {
             /**
@@ -57,5 +66,6 @@ public class App {
             try                            { Thread.sleep(10); } 
             catch (InterruptedException e) { e.printStackTrace(); }
         }
+        
     }
 }
