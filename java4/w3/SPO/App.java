@@ -65,7 +65,7 @@ public class App {
         List<List<Vrachtwagen>> rijen_vrachtwagens = new List<>();
         for (int i = 0; i < kade.size(); i += MAX_VRACHTWAGENS_PER_RIJ) {
             List<Vrachtwagen> innerList = new ArrayList<>();
-            for (int j = 0; j < Math.min(MAX_VRACHTWAGENS_PER_RIJ, kade.size() - i); j++) {
+            for (int j = 0; j < MAX_VRACHTWAGENS_PER_RIJ; j++) {
                 innerList.add(kade.get(i + j));
             }
             rijen_vrachtwagens.add(innerList);
