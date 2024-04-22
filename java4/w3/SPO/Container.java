@@ -1,9 +1,3 @@
-/**
- * TINPRO04-3 Les 11 // JCF
- * 20240308 // m.skelo@hr.nl
- * 
- */
-
 public class Container {
     private int id;
     private String inhoud;
