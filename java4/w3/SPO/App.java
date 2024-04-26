@@ -27,7 +27,7 @@ public class App {
 
         final int MAX_VRACHTWAGENS_PER_RIJ = 5;
         final int AANTAL_VRACHTWAGENS = kade.size();        
-        final int RIJSTROKEN = AANTAL_VRACHTWAGENS / MAX_VRACHTWAGENS_PER_RIJ;
+        final int RIJSTROKEN; //TODO
 
     }
 }
