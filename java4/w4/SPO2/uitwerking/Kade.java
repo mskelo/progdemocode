@@ -19,9 +19,8 @@ public class Kade {
      * of anders: return null als de kade leeg is.
      */
     public static synchronized Container getContainer() {
-        if (!kade.isEmpty()) {
-            return kade.remove(0);
-        } 
+        if (!kade.isEmpty())
+             return kade.remove(0);
         else return null;
     }
 
