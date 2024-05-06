@@ -15,7 +15,7 @@ import java.util.HashMap;
 public class App {
     public static void main(String[] args) {
         List<String> lines = new ArrayList<>();
-        List<Vrachtwagen> kade = new ArrayList<>();
+        List<Vrachtwagen> checkin = new ArrayList<>();
 
         // I/O
 
@@ -26,7 +26,7 @@ public class App {
          */
 
         final int MAX_VRACHTWAGENS_PER_RIJ = 5;
-        final int AANTAL_VRACHTWAGENS = kade.size();        
+        final int AANTAL_VRACHTWAGENS = checkin.size();        
         final int RIJSTROKEN; //TODO
 
     }
