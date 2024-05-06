@@ -77,9 +77,12 @@ public class App {
             kraan.start();
         }
 
-        // Test of de code werkt naar behoren
-        assert Kade.getSize() == 27;
+        for (Hijskraan kraan : kranen) {
+            try { kraan.join(); } catch (Exception e) {}
+        }
 
+        // Check of de kade nu leeg is en het schip vol
+        System.out.println("\nKade size: "+Kade.getSize() + "\nSchip size: " + Schip.getSize());
     }
 }
  

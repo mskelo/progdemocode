@@ -22,4 +22,8 @@ public class Schip {
             System.out.println("Container "+c.getID()+" ("+c.getInhoud()+")");
         }
     }
+
+    public static int getSize() {
+        return schip.size();
+    }
 }
