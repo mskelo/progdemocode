@@ -1,3 +1,9 @@
+/**
+ * TINPRO04-4 Les 7
+ * SPO 1+2 - Multithreaded douanecontrole + inladen
+ * 20240506 // m.skelo@hr.nl
+ */
+
 public class Container {
     private int id;
     private String inhoud;

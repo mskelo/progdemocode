@@ -1,10 +1,9 @@
 /**
  * TINPRO04-4 Les 7
- * SPO 2
+ * SPO 1+2 - Multithreaded douanecontrole + inladen
  * 20240506 // m.skelo@hr.nl
  */
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -21,7 +20,7 @@ public class App {
         
         // I/O
         try   { lines = Files.readAllLines(Paths.get("./input.txt")); } 
-        catch ( IOException e ) { e.printStackTrace(); }
+        catch ( Exception e ) { e.printStackTrace(); }
         
         // Converteer de rauwe data in het inputbestand (regel voor regel)
         // naar datatypes waar we iets mee kunnen
@@ -77,11 +76,12 @@ public class App {
             kraan.start();
         }
 
+        // Als je dit weglaat, is het leuk om naar Kade.size() te kijken met de klas
         for (Hijskraan kraan : kranen) {
             try { kraan.join(); } catch (Exception e) {}
         }
 
-        // Check of de kade nu leeg is en het schip vol
+        // Check of de kade aan het einde leeg is en het schip vol
         System.out.println("\nKade size: "+Kade.getSize() + "\nSchip size: " + Schip.getSize());
     }
 }

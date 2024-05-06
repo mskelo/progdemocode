@@ -1,25 +1,30 @@
 /**
- * TINPRO04-4 Les 5
- * SPO 1 - Hyperdouanecontrole
- * 20240422 // m.skelo@hr.nl
+ * TINPRO04-4 Les 7
+ * SPO 2 - Multithreaded containers inladen
+ * 20240506 // m.skelo@hr.nl
  */
 
-De haven van Rotterdam heeft na alle technologische innovaties van afgelopen kwartaal denderend succes geboekt!
-Er komen meer vrachtwagens dan ooit door de haven, en eigenlijk begint de haven nu aan haar eigen succes ten onder te gaan.
-De douane heeft haar capaciteit nooit vergroot, waardoor alle vrachtwagens nu in een kilometerslange 
-rij staan te wachten om langs de eenzame douanebeambte te gaan.
+Bij de douanecontrole worden een paar foute containers eruit gepikt,
+en wordt de rest op de kade gezet om later op het schip geladen te worden.
 
-De haven heeft plannen aangekondigd om de douanecapaciteit te vergroten met revolutionaire, nieuwe "multidouane"-technologie.
-Dit magische systeem zorgt ervoor dat de douane zich aanpast aan de hoeveelheid vrachtwagens die voor die dag op de lijst staan.
-De lijst van vandaag is te vinden in input.txt
+Waar ze bij de douane net leren hoe ze sneller en efficienter kunnen werken,
+kijken de collega's op de kade jaloers over het hek:
+zij willen ook meerdere containers tegelijk kunnen inladen!
 
-Het systeem 'knipt' de lijst in kleinere lijsten, en de vrachtwagens moeten zo voorsorteren voor hun "rijstrook".
-Zo wordt iedere nieuwe wachtrij flink korter, en kunnen meerdere douanechecks tegelijk plaatsvinden!
+De haven wil drie hijskranen aanschaffen om het werk van de kademedewerkers te verlichten.
+De Hijskraan moet checken of de Kade leeg is, voordat er een container op het schip wordt gezet.
+De Kade geeft steeds de eerstvolgende container als er nog Containers staan. 
+    --> BONUS: Probeer specifieke Containers op te pakken op basis van Container-ID
+Als de Kade leeg is, returnt deze null.
+Het overladen van een Container duurt tussen de 1 en 6 seconden.
 
-OPDRACHT:
-=========================================================================
-- Lees de lijst met Vrachtwagens in, en converteer ze naar de juiste datatypes (zie Vrachtwagen en Container)
-- Knip de 'grote taak' in stukken en voer ze parallel uit.
-- Stuur alle Vrachtwagens door de controle. Print de inhoud van de Containers die niet door de controle komen op het scherm.
+---------------------------       ----------       --------       ---------
+| Vrachtwagen (Container) |  -->  | Douane |  -->  | Kade |  -->  | Schip |
+---------------------------       ----------       --------       ---------
 
+Zorg dat meerdere Hijskranen niet dezelfde Container proberen te pakken door gebruik te maken van de stof uit les 7.
+Zorg daarnaast dat elke Hijskraan automatisch stopt wanneer die ziet dat de Kade leeg is.
 
+Bestudeer het bijgeleverde klassendiagram en neem dit over in code. 
+Als je SPO deel 1 gemaakt hebt, kan je direct verder met die code.
+Teken een sequencediagram voordat je begint.

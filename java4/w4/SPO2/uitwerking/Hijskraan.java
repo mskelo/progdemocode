@@ -1,18 +1,24 @@
+/**
+ * TINPRO04-4 Les 7
+ * SPO 1+2 - Multithreaded douanecontrole + inladen
+ * 20240506 // m.skelo@hr.nl
+ */
+
 import java.util.Random;
 
 public class Hijskraan extends Thread {
 
-    private Container container;
     private String naam;
 
-    public Hijskraan(String n) {
-        naam = n;
+    public Hijskraan(String naam) {
+        this.naam = naam;
     }
 
     @Override
     public void run() {
         while (true) {
             try {
+                Container container;
                 System.out.println(naam+": container halen");
                 container = Kade.getContainer();
     

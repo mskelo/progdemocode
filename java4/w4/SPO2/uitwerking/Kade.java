@@ -1,8 +1,14 @@
+/**
+ * TINPRO04-4 Les 7
+ * SPO 1+2 - Multithreaded douanecontrole + inladen
+ * 20240506 // m.skelo@hr.nl
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Kade {
-    private static List<Container> kade = new ArrayList<>();;
+    private static List<Container> kade = new ArrayList<>();
 
     public static synchronized void addContainer(Container c) {
         kade.add(c);

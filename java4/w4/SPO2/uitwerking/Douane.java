@@ -1,3 +1,9 @@
+/**
+ * TINPRO04-4 Les 7
+ * SPO 1+2 - Multithreaded douanecontrole + inladen
+ * 20240506 // m.skelo@hr.nl
+ */
+
 import java.util.List;
 
 public class Douane extends Thread {
@@ -12,7 +18,7 @@ public class Douane extends Thread {
             if (check(v.getContainer())) {
                 System.out.println("Geweigerd door de douane: " + v.getContainer().getInhoud());
             } 
-            // Toegevoegd in deel 2:
+            // Toegevoegd in SPO deel 2:
             else {
                 Kade.addContainer(v.getContainer());
             }
