@@ -32,6 +32,9 @@ public class Douane extends Thread {
         for (char ch : inhoud.toCharArray()) {
             som += (int) ch;
         }
+        try {
+            sleep(5000);
+        } catch (InterruptedException e) { }
         return (som % 17 < 2); // All hail the magic number
     }
 }
