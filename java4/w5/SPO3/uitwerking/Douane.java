@@ -5,6 +5,7 @@
  */
 
 import java.util.List;
+import java.util.Random;
 
 public class Douane extends Thread {
     private List<Vrachtwagen> wachtrij;
@@ -49,7 +50,8 @@ public class Douane extends Thread {
             som += (int) ch;
         }
         try {
-            sleep(5000);
+            Random r = new Random();
+            Thread.sleep(r.nextInt(5000)+1000);
         } catch (InterruptedException e) { }
         return (som % 17 < 2); // All hail the magic number
     }

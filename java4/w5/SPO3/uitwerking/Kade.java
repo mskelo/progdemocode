@@ -17,10 +17,27 @@ public class Kade {
     /**
      * `synchronized` in method signature is hetzelfde als `synchronized (this)`
      * Je moet de `lock hebben` op het Object waar je wait()/notify() op wilt aanroepen.
-     * We willen dus de Kade (this) locken
+     *                                       /waar je gedeelde resource zit
+     * 
+     * We willen dus de Kade (this) locken, 
+     * omdat alle Douane Threads en alle Hijskraan Threads 
+     * (tegelijkertijd) naar Kade kunnen schrijven.
+     * 
+     * `synchronized` zorgt dat die Threads 1 voor 1 
+     * (ipv tegelijk en door elkaar) bij de locked resource kunnen.
      */
     public synchronized Container getContainer() {
-        if (kade.isEmpty()){
+        if (!kade.isEmpty()) {
+            try {
+                Container c = kade.remove(0);
+                System.out.println("Kade: Container "+c.getID()+" aan de hijskraan gegeven.");
+                return c;
+            } 
+            catch(IndexOutOfBoundsException e1) {
+                e1.printStackTrace();
+            }
+        } 
+        else {
             System.out.println("Kade: Leeg! Even wachten.");
             try {
                 wait();
@@ -28,12 +45,7 @@ public class Kade {
                 e.printStackTrace();
             }
         }
-
-        // vvv    Dit wordt uitgevoerd NA een notify() elders.    vvv
-        Container c = kade.remove(0);
-        notifyAll();
-        System.out.println("Kade: Container "+c.getID()+" aan de hijskraan gegeven.");
-        return c;
+        return null;
     }
 
     public synchronized void addContainer(Container c) {
@@ -46,7 +58,7 @@ public class Kade {
             }
         }
         
-        // vvv    Dit wordt uitgevoerd NA een notify() elders.    vvv
+        // vvv    Dit wordt uitgevoerd NA de notify() op Douane.java:28    vvv
         kade.add(c);
         System.out.println("Kade: Container "+c.getID()+" aan de kade toegevoegd.");
         notifyAll();

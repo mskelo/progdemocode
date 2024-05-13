@@ -36,12 +36,14 @@ public class Hijskraan extends Thread {
                     System.out.println("Kraan "+naam+": container halen");
                     container = this.kade.getContainer();
                 }
-    
-                System.out.println("Kraan "+naam+" wil container "+container.getID()+" plaatsen...");
-                int tijd = 3000;
-                sleep(tijd); //lalalalalalala
-                this.schip.addContainer(container);
-                System.out.println("Kraan "+naam+": Overladen container "+container.getID()+" voltooid...");
+                if (container != null) {
+                    System.out.println("Kraan "+naam+" wil container "+container.getID()+" plaatsen...");
+                    int tijd = 3000;
+                    Thread.sleep(tijd); //lalalalalalala
+                    this.schip.addContainer(container);
+                    System.out.println("Kraan "+naam+": Overladen container "+container.getID()+" voltooid...");
+                }
+                
             }
             catch(InterruptedException e) {
                 e.printStackTrace();
