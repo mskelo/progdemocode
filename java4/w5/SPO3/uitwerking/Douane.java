@@ -21,7 +21,6 @@ public class Douane extends Thread {
             if (check(v.getContainer())) {
                 System.out.println("/!\\ Geweigerd door de douane: container " + v.getContainer().getID() + ", "+v.getContainer().getInhoud());
             } 
-            // Toegevoegd in SPO deel 2:
             else {
                 synchronized (this.kade) {
                     this.kade.addContainer(v.getContainer());

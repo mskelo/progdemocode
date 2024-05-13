@@ -1,7 +1,7 @@
 /**
- * TINPRO04-4 Les 7
- * SPO 1+2 - Multithreaded douanecontrole + inladen
- * 20240506 // m.skelo@hr.nl
+ * TINPRO04-4 Les 10
+ * SPO 3 - Trossen los!
+ * 20240513 // m.skelo@hr.nl
  */
 
 import java.util.ArrayList;
