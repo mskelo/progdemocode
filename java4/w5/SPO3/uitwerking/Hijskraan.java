@@ -1,17 +1,19 @@
 /**
- * TINPRO04-4 Les 7
- * SPO 1+2 - Multithreaded douanecontrole + inladen
- * 20240506 // m.skelo@hr.nl
+ * TINPRO04-4 Les 10
+ * SPO 3 - Trossen los!
+ * 20240513 // m.skelo@hr.nl
  */
-
-import java.util.Random;
 
 public class Hijskraan extends Thread {
 
     private String naam;
+    private Kade kade;
+    private Schip schip;
 
-    public Hijskraan(String naam) {
+    public Hijskraan(String naam, Kade kade, Schip schip) {
         this.naam = naam;
+        this.kade = kade;
+        this.schip = schip;
     }
 
     @Override
@@ -19,24 +21,27 @@ public class Hijskraan extends Thread {
         while (true) {
             try {
                 Container container;
-                System.out.println(naam+": container halen");
-                container = Kade.getContainer();
-    
-                if(container == null) {
-                    System.out.println(naam+": De kade lijkt leeg...");
-                    break;
+                /**
+                 * Om wait() of notify() aan te roepen op een Object wat een gedeelde resource bevat,
+                 * moeten we eerst de lock op dat Object hebben. In dit geval `synchronized (kade)`
+                 */
+                synchronized (this.kade) {
+                    if (this.kade.getSize() == 0 && !this.kade.is_stopped()) {
+                        System.out.println("Kraan "+naam+": Kade leeg! Even wachten.");
+                        this.kade.wait();
+                    } else if (this.kade.is_stopped() && this.kade.getSize() == 0) {
+                        System.out.println("Kraan "+naam+": Er zijn geen containers meer!");
+                        return;
+                    }
+                    System.out.println("Kraan "+naam+": container halen");
+                    container = this.kade.getContainer();
                 }
     
-                Random r = new Random();
-                int tijd = r.nextInt(5000);
-                tijd += 1000;
-    
-                System.out.println(naam+": Container "+container.getID()+" opgehaald...overladen ");
+                System.out.println("Kraan "+naam+" wil container "+container.getID()+" plaatsen...");
+                int tijd = 3000;
                 sleep(tijd); //lalalalalalala
-    
-                System.out.println(naam+" wil container "+container.getID()+" plaatsen...");
-                Schip.addContainer(container);
-                System.out.println(naam+": Overladen "+container.getID()+" voltooid...");
+                this.schip.addContainer(container);
+                System.out.println("Kraan "+naam+": Overladen container "+container.getID()+" voltooid...");
             }
             catch(InterruptedException e) {
                 e.printStackTrace();

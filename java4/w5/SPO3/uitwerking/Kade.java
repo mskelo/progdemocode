@@ -8,23 +8,69 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Kade {
-    private static List<Container> kade = new ArrayList<>();
+    private List<Container> kade;
 
-    public static synchronized void addContainer(Container c) {
-        kade.add(c);
+    public Kade() {
+        this.kade = new ArrayList<>();
     }
 
     /**
-     * Schrijf deze functie zo dat de eerste Container steeds returned wordt,
-     * of anders: return null als de kade leeg is.
+     * `synchronized` in method signature is hetzelfde als `synchronized (this)`
+     * Je moet de `lock hebben` op het Object waar je wait()/notify() op wilt aanroepen.
+     * We willen dus de Kade (this) locken
      */
-    public static synchronized Container getContainer() {
-        if (!kade.isEmpty())
-             return kade.remove(0);
-        else return null;
+    public synchronized Container getContainer() {
+        if (kade.isEmpty()){
+            System.out.println("Kade: Leeg! Even wachten.");
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // vvv    Dit wordt uitgevoerd NA een notify() elders.    vvv
+        Container c = kade.remove(0);
+        notifyAll();
+        System.out.println("Kade: Container "+c.getID()+" aan de hijskraan gegeven.");
+        return c;
     }
 
-    public static int getSize() {
+    public synchronized void addContainer(Container c) {
+        if (kade.size() == 5) {
+            System.out.println("Kade: Vol! Even wachten.");
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        // vvv    Dit wordt uitgevoerd NA een notify() elders.    vvv
+        kade.add(c);
+        System.out.println("Kade: Container "+c.getID()+" aan de kade toegevoegd.");
+        notifyAll();
+    }
+
+    public synchronized int getSize() {
         return kade.size();
+    }
+
+
+
+    /**
+     * Optioneel:
+     * Toggle een flag om de threads te stoppen aan het einde van het programma.
+     * Zonder dit werkt het ook, maar blijft het programma hangen als alle containers door de douane zijn.
+     */
+
+    private boolean stop_signal = false;
+    
+    public synchronized void toggle_stop_signal() {
+        stop_signal = true;
+    }
+
+    public synchronized boolean is_stopped() {
+        return stop_signal;
     }
 }

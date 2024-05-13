@@ -1,7 +1,7 @@
 /**
  * TINPRO04-4 Les 10
- * SPO 3 - Uitladen met producers en consumers
- * 20240507 // m.skelo@hr.nl
+ * SPO 3 - Trossen los!
+ * 20240513 // m.skelo@hr.nl
  */
 
 import java.nio.file.Files;
@@ -17,6 +17,9 @@ public class App {
 
         List<String> lines = new ArrayList<>();
         List<Vrachtwagen> checkin = new ArrayList<>();
+
+        Kade kade = new Kade();
+        Schip schip = new Schip();
         
         // I/O
         try   { lines = Files.readAllLines(Paths.get("./input.txt")); } 
@@ -54,7 +57,7 @@ public class App {
         // Vul de Douane Threads met voorgesorteerde Vrachtwagens
         Thread[] douanecontrole = new Douane[RIJSTROKEN];
         for (int i=0; i<RIJSTROKEN; i++) {
-            douanecontrole[i] = new Douane(voorgesorteerde_vrachtwagens.get(i));
+            douanecontrole[i] = new Douane(voorgesorteerde_vrachtwagens.get(i), kade);
         }
 
         // Start de Threads. Dit stopt ook meteen de 'schone' Containers in Kade.
@@ -65,11 +68,10 @@ public class App {
         // ================================================================ //
         //                          BEGIN SPO DEEL 2                        //
         // ================================================================ //
-
         Hijskraan[] kranen = { 
-            new Hijskraan("Foo"), 
-            new Hijskraan("Bar"), 
-            new Hijskraan("Baz") 
+            new Hijskraan("Foo", kade, schip), 
+            new Hijskraan("Bar", kade, schip), 
+            new Hijskraan("Baz", kade, schip) 
         };
 
         for (Hijskraan kraan : kranen) {
@@ -82,7 +84,8 @@ public class App {
         }
 
         // Check of de kade aan het einde leeg is en het schip vol
-        System.out.println("\nKade size: "+Kade.getSize() + "\nSchip size: " + Schip.getSize());
+        System.out.println("\nKade size: "+ kade.getSize() + "\nSchip size: " + Schip.getSize());
+        System.out.println("Trossen los!");
     }
 }
  

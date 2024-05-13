@@ -1,3 +1,9 @@
+/**
+ * TINPRO04-4 Les 10
+ * SPO 3 - Trossen los!
+ * 20240513 // m.skelo@hr.nl
+ */
+
 public class Vrachtwagen {
     private String kenteken;
     private Container container;
