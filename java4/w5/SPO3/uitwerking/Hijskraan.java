@@ -38,8 +38,10 @@ public class Hijskraan extends Thread {
                 }
                 if (container != null) {
                     System.out.println("Kraan "+naam+" wil container "+container.getID()+" plaatsen...");
-                    int tijd = 3000;
-                    Thread.sleep(tijd); //lalalalalalala
+                    try {
+                        Random r = new Random();
+                        Thread.sleep(r.nextInt(5000)+1000);
+                    } catch (InterruptedException e) { }
                     this.schip.addContainer(container);
                     System.out.println("Kraan "+naam+": Overladen container "+container.getID()+" voltooid...");
                 }
