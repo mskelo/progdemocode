@@ -50,8 +50,7 @@ public class Douane extends Thread {
             som += (int) ch;
         }
         try {
-            Random r = new Random();
-            Thread.sleep(r.nextInt(5000)+1000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) { }
         return (som % 17 < 2); // All hail the magic number
     }
